@@ -16,6 +16,7 @@ driver = webdriver.Chrome()
 driver.get("https://www.linkedin.com")
 
 def make_login():
+    print('Bot iniciando. Bora aumentar essa rede de contatos!')
     email_input = WebDriverWait(driver, 30).until(
         EC.visibility_of_element_located((By.XPATH, './/*[@id="session_key"]'))
     )
