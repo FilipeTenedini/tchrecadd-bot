@@ -25,10 +25,16 @@ Execute o seguinte comando para instalar as dependências necessárias:
 pip install -r requirements.txt
 ```
 
+logo após:
+
+```
+python main.py
+```
+
 python main.py
 O bot abrirá um chrome de teste automatizado e começará a adicionar os Tech Recruiters automaticamente com base nas configurações fornecidas.
 
 ## Importante
-Caso você vá usar o vscode, ignore arquivos .ipynb, pois eles contêm codigo desnecessário para quem quiser rodar no jupyter
+Caso você vá usar o vscode, ignore arquivos .ipynb, é código necessário apenas para quem quiser rodar no jupyter
 
 Aproveite a automação oferecida por este bot e aumente suas chances de conectar com Tech Recruiters e expandir sua rede profissional no LinkedIn!
