@@ -2,7 +2,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-from functions.seleniumfunctions import make_login, search_recruiter, only_wait_element, get_number_of_pages, driver, get_button, make_invite, go_to_next_page
+from functions.seleniumfunctions import make_login, search_recruiter, only_wait_element, get_number_of_pages, driver, get_button, make_invite, go_to_next_page, press_esc
 
 make_login()
 search_recruiter()
@@ -22,4 +22,5 @@ for i in range(0, MAX, 1):
                 make_invite(button)
         except:
             continue
+    press_esc()
     go_to_next_page()

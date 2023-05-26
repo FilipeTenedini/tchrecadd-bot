@@ -58,15 +58,30 @@ def get_button():
     buttons_list = driver.find_elements(By.CLASS_NAME, 'artdeco-button.artdeco-button--2.artdeco-button--secondary')
     return buttons_list
 
+def check_element_present():
+    elements = driver.find_elements(By.CLASS_NAME, "ember-text-field")
+    if len(elements) > 0:
+        return True
+    else:
+        return False
+    
+def press_esc():
+    body = driver.find_element(By.CLASS_NAME, "ember-text-field")
+    body.send_keys(Keys.ESCAPE)
+
 def make_invite(button):
     driver.execute_script("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", button)
     button.click()
     time.sleep(1)
-    send_invite = driver.find_element(By.CLASS_NAME, 'artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1')
-    send_invite.click()
+    if check_element_present() == True:
+        press_esc()
+    else:
+        send_invite = driver.find_element(By.CLASS_NAME, 'artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1')
+        send_invite.click()
 
 def go_to_next_page():
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(2)
     NEXT = driver.find_elements(By.CLASS_NAME, 'artdeco-button__text')[-3]
     NEXT.click()
+
