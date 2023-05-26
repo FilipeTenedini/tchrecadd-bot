@@ -6,9 +6,7 @@ Antes de executar o bot, siga as etapas de configuração abaixo:
 
 Crie um arquivo .env na raiz do projeto.
 
-Abra o arquivo .env.example e preencha-o com seu email e senha do LinkedIn.
-
-Copie as informações preenchidas no arquivo .env.example para o arquivo .env que você criou.
+Abra o arquivo .env e preencha com seu email e sua senha conforme exemplo que está no arquivo .env.example
 
 Certifique-se de que todas as informações fornecidas sejam corretas para que o bot possa se autenticar corretamente na plataforma do LinkedIn.
 
@@ -35,6 +33,9 @@ python main.py
 O bot abrirá um chrome de teste automatizado e começará a adicionar os Tech Recruiters automaticamente com base nas configurações fornecidas.
 
 ## Importante
+
+#### O linkedin precisa estar em português!
+
 Caso você vá usar o vscode, ignore arquivos .ipynb, é código necessário apenas para quem quiser rodar no jupyter
 
 Aproveite a automação oferecida por este bot e aumente suas chances de conectar com Tech Recruiters e expandir sua rede profissional no LinkedIn!
