@@ -29,13 +29,10 @@ logo após:
 python main.py
 ```
 
-python main.py
 O bot abrirá um chrome de teste automatizado e começará a adicionar os Tech Recruiters automaticamente com base nas configurações fornecidas.
 
 ## Importante
 
 #### O linkedin precisa estar em português!
-
-Caso você vá usar o vscode, ignore arquivos .ipynb, é código necessário apenas para quem quiser rodar no jupyter
 
 Aproveite a automação oferecida por este bot e aumente suas chances de conectar com Tech Recruiters e expandir sua rede profissional no LinkedIn!
