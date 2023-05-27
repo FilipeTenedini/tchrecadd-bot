@@ -82,8 +82,11 @@ def check_element_present():
     else:
         return False
     
-def press_esc():
-    body = driver.find_element(By.CLASS_NAME, "ember-text-field")
+def press_esc(type, element):
+    if type == 'class':
+        body = driver.find_element(By.CLASS_NAME, element)
+    else:
+        body = driver.find_element(By.TAG_NAME, element)
     body.send_keys(Keys.ESCAPE)
 
 def make_invite(button, count):
@@ -94,9 +97,10 @@ def make_invite(button, count):
         send_invite = driver.find_element(By.CLASS_NAME, 'artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1')
         print(f'{count} pessoas adicionadas a sua rede')
         send_invite.click()
+        press_esc('tag', "body")
     except:
         if check_element_present() == True:
-            press_esc()
+            press_esc('class', "ember-text-field")
 
 def go_to_next_page():
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
