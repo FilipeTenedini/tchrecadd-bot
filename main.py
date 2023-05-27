@@ -25,5 +25,5 @@ for i in range(0, MAX, 1):
                 make_invite(button, count)
         except:
             continue
-    press_esc()
+    press_esc('tag', "body")
     go_to_next_page()
