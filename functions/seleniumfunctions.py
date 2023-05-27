@@ -12,8 +12,24 @@ load_dotenv()
 EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 
+
 driver = webdriver.Chrome()
-driver.get("https://www.linkedin.com")
+
+
+
+
+def verify_content():
+    body_element = driver.find_element(By.TAG_NAME, 'body')
+    is_empty = body_element.get_attribute('innerHTML') == ''
+    if is_empty:
+        driver.execute_script("alert('Por favor, reinicie o bot!');")
+    else:
+        print('Tudo certo, o bot fará o trabalho mas fique de olho!')
+
+def go_to_page():
+    driver.get("https://www.linkedin.com")
+    driver.maximize_window()
+    verify_content()
 
 def make_login():
     print('Bot iniciando. Bora aumentar essa rede de contatos!')
@@ -70,15 +86,17 @@ def press_esc():
     body = driver.find_element(By.CLASS_NAME, "ember-text-field")
     body.send_keys(Keys.ESCAPE)
 
-def make_invite(button):
+def make_invite(button, count):
     driver.execute_script("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", button)
     button.click()
     time.sleep(1)
-    if check_element_present() == True:
-        press_esc()
-    else:
+    try:
         send_invite = driver.find_element(By.CLASS_NAME, 'artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1')
+        print(f'{count} pessoas adicionadas a sua rede')
         send_invite.click()
+    except:
+        if check_element_present() == True:
+            press_esc()
 
 def go_to_next_page():
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

@@ -2,9 +2,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-from functions.seleniumfunctions import make_login, search_recruiter, only_wait_element, get_number_of_pages, driver, get_button, make_invite, go_to_next_page, press_esc
+from functions.seleniumfunctions import go_to_page, make_login, search_recruiter, only_wait_element, get_number_of_pages, driver, get_button, make_invite, go_to_next_page, press_esc
 
 count = 0
+go_to_page()
 make_login()
 search_recruiter()
 only_wait_element()
@@ -20,9 +21,8 @@ for i in range(0, MAX, 1):
     for i, button in enumerate(buttons_list):
         try:
             if 'Conectar' in button.text and i != 0:
-                make_invite(button)
                 count += 1
-                print(f'{count} pessoas adicionadas a sua rede')
+                make_invite(button, count)
         except:
             continue
     press_esc()

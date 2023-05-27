@@ -1,2 +1,5 @@
 selenium
 python-dotenv
+requests
+urllib3
+chardet
